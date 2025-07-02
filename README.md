@@ -1,48 +1,214 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+# n8n-nodes-nerve-agent
 
-# n8n-nodes-starter
+![Nerve Agent Node Icon](nodes/NerveAgent/nerve-agent.svg)
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](https://n8n.io). It includes the node linter and other dependencies.
+An n8n community node for integrating with [Nerve Agent](https://github.com/SingularityAI-Dev/nerve), a sophisticated multi-agent AI system for advanced automation and AI workflows.
 
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+## Features
 
-If you would like your node to be available on n8n cloud you can also [submit your node for verification](https://docs.n8n.io/integrations/creating-nodes/deploy/submit-community-nodes/).
+This node provides comprehensive integration with Nerve Agent's capabilities:
 
-## Prerequisites
+### 🤖 Agent Chat
+- Direct conversational interface with AI agents
+- Context management and conversation history
+- File attachment support
+- Real-time streaming responses
 
-You need the following installed on your development machine:
+### 💻 Code Execution
+- Execute Python, Node.js, and Shell code
+- Session management for maintaining execution context
+- Configurable timeouts and error handling
+- Direct integration with Nerve Agent's runtime engines
 
-* [git](https://git-scm.com/downloads)
-* Node.js and npm. Minimum version Node 20. You can find instructions on how to install both using nvm (Node Version Manager) for Linux, Mac, and WSL [here](https://github.com/nvm-sh/nvm). For Windows users, refer to Microsoft's guide to [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Install n8n with:
-  ```
-  npm install n8n -g
-  ```
-* Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
+### 🧠 Memory Operations
+- Query agent memory and knowledge base
+- Store information for future retrieval
+- Semantic, keyword, and hybrid search capabilities
+- Cross-workflow knowledge persistence
 
-## Using this starter
+### 📁 File Processing
+- Upload and process multiple file formats
+- Automatic text extraction and content indexing
+- Integration with knowledge base systems
+- Support for PDFs, documents, images, and more
 
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
+### 🌐 Browser Automation
+- Web page navigation and content extraction
+- Element interaction and form filling
+- Screenshot capture capabilities
+- Powered by Playwright automation engine
 
-1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
-   ```
-   git clone https://github.com/<your organization>/<your-repo-name>.git
-   ```
-3. Run `npm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `npm run lint` to check for errors or `npm run lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
+### 🔧 Tool Execution
+- Direct access to individual Nerve Agent tools
+- Custom parameter passing
+- Extensible tool ecosystem
+- MCP (Model Context Protocol) integration
 
-## More information
+## Installation
 
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
+1. Install from npm:
+```bash
+npm install @singularity_intelligence/n8n-nodes-nerve-agent
+```
+
+2. Or install from the n8n Community Nodes interface:
+   - Go to **Settings** > **Community Nodes**
+   - Enter `@singularity_intelligence/n8n-nodes-nerve-agent`
+   - Click **Install**
+
+3. Restart n8n to load the new node
+
+## Configuration
+
+### Prerequisites
+- A running Nerve Agent instance
+- Nerve Agent API endpoint accessible from your n8n installation
+- Optional: API key or authentication credentials
+
+### Credentials Setup
+
+1. In n8n, go to **Credentials** and create a new **Nerve Agent API** credential
+2. Configure the following:
+   - **Base URL**: Your Nerve Agent instance URL (e.g., `http://localhost:7777`)
+   - **API Key**: Optional API key for authentication
+   - **Username/Password**: Alternative authentication method
+
+### Node Configuration
+
+The Nerve Agent node is organized by **Resource** and **Operation**:
+
+#### Resources:
+- **Agent Chat**: Conversational AI interactions
+- **Code Execution**: Runtime code execution
+- **Memory Operations**: Knowledge management
+- **File Processing**: File upload and processing
+- **Browser Automation**: Web automation tasks
+- **Tool Execution**: Direct tool access
+
+Each resource has specific operations and configuration options tailored to its functionality.
+
+## Usage Examples
+
+### Basic Agent Chat
+```json
+{
+  "resource": "agentChat",
+  "operation": "sendMessage",
+  "message": "Analyze this data and provide insights",
+  "contextId": "my-analysis-session"
+}
+```
+
+### Code Execution
+```json
+{
+  "resource": "codeExecution",
+  "operation": "executePython",
+  "code": "import pandas as pd\ndf = pd.read_csv('data.csv')\nprint(df.describe())",
+  "sessionId": "data-analysis"
+}
+```
+
+### Memory Query
+```json
+{
+  "resource": "memoryOperations",
+  "operation": "queryMemory",
+  "query": "customer retention strategies",
+  "searchType": "semantic"
+}
+```
+
+### File Processing
+```json
+{
+  "resource": "fileProcessing",
+  "operation": "uploadFile",
+  "file": "/path/to/document.pdf",
+  "processingOptions": {
+    "extractText": true,
+    "indexContent": true
+  }
+}
+```
+
+## Advanced Features
+
+### Multi-Agent Workflows
+Leverage Nerve Agent's hierarchical agent system to create complex, multi-step automation workflows where agents can delegate tasks to specialized sub-agents.
+
+### Persistent Memory
+Build workflows that learn and improve over time by storing successful solutions and retrieving relevant knowledge across different executions.
+
+### Dynamic Code Generation
+Use the AI agents to generate, execute, and iterate on code solutions dynamically based on your specific requirements.
+
+### Web Automation
+Combine AI decision-making with browser automation to create intelligent web scraping and interaction workflows.
+
+## API Compatibility
+
+This node is designed to work with Nerve Agent's REST API endpoints:
+- `/message` - Agent chat interface
+- `/execute` - Code execution endpoints
+- `/memory/*` - Memory management
+- `/upload` - File processing
+- `/browser/*` - Browser automation
+- `/tool/*` - Tool execution
+
+## Troubleshooting
+
+### Connection Issues
+- Verify your Nerve Agent instance is running and accessible
+- Check the Base URL in your credentials
+- Ensure firewall/network policies allow connection
+
+### Authentication Problems
+- Verify API key or username/password credentials
+- Check Nerve Agent authentication configuration
+- Test credentials using the built-in credential test
+
+### Performance Optimization
+- Use session IDs for code execution to maintain context
+- Implement proper error handling in your workflows
+- Consider timeout settings for long-running operations
+
+## Development
+
+To contribute to this node:
+
+1. Clone the repository:
+```bash
+git clone https://github.com/SingularityAI-Dev/nerve-n8n-node-programmatic.git
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Build the node:
+```bash
+npm run build
+```
+
+4. Test locally with n8n
 
 ## License
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+MIT
+
+## Support
+
+- **Issues**: [GitHub Issues](https://github.com/SingularityAI-Dev/nerve-n8n-node-programmatic/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/SingularityAI-Dev/nerve-n8n-node-programmatic/discussions)
+- **Nerve Agent**: [Main Project](https://github.com/SingularityAI-Dev/nerve)
+
+## Changelog
+
+### v0.1.0
+- Initial release
+- Core functionality for all major Nerve Agent features
+- Comprehensive operation support
+- Full credential management
+- Documentation and examples

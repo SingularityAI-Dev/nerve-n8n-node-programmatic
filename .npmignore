@@ -1,2 +1,65 @@
-.DS_Store
+# Source files
+nodes/**/*.ts
+credentials/**/*.ts
+!dist/**
+
+# Example files
+dist/nodes/ExampleNode/
+dist/nodes/HttpBin/
+dist/credentials/ExampleCredentialsApi.*
+dist/credentials/HttpBinApi.*
+
+# Development files
+.eslintrc.js
+.eslintrc.prepublish.js
+gulpfile.js
+tsconfig.json
 *.tsbuildinfo
+
+# Documentation (keep README.md, LICENSE.md, CHANGELOG.md)
+CONTRIBUTING.md
+TEST_RESULTS.md
+
+# Version control
+.git/
+.gitignore
+
+# Node modules
+node_modules/
+
+# Build artifacts
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Test files
+test/
+tests/
+*.test.js
+*.spec.js
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production

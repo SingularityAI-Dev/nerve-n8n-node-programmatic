@@ -1,19 +1,35 @@
 {
-  "name": "n8n-nodes-<...>",
+  "name": "@singularity_intelligence/n8n-nodes-nerve-agent",
   "version": "0.1.0",
-  "description": "",
+  "description": "A comprehensive n8n community node for integrating with Nerve Agent, a sophisticated multi-agent AI system. Provides chat interface, code execution, memory management, file processing, browser automation, and tool execution capabilities.",
   "keywords": [
-    "n8n-community-node-package"
+    "n8n-community-node-package",
+    "ai",
+    "agent",
+    "automation",
+    "nerve-agent",
+    "chatbot",
+    "code-execution",
+    "memory",
+    "browser-automation",
+    "file-processing",
+    "workflow",
+    "artificial-intelligence",
+    "integration",
+    "api"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/SingularityAI-Dev/nerve-n8n-node-programmatic",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Singularity Intelligence",
+    "email": "contact@singularityai.dev"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/SingularityAI-Dev/nerve-n8n-node-programmatic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SingularityAI-Dev/nerve-n8n-node-programmatic/issues"
   },
   "engines": {
     "node": ">=20.15"
@@ -33,12 +49,10 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
+      "dist/credentials/NerveAgentApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/NerveAgent/NerveAgent.node.js"
     ]
   },
   "devDependencies": {
@@ -50,6 +64,9 @@
     "typescript": "^5.8.2"
   },
   "peerDependencies": {
-    "n8n-workflow": "*"
+    "n8n-workflow": ">=1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
