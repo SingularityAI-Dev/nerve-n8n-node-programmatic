@@ -1,6 +1,6 @@
 {
-  "name": "@singularity_intelligence/n8n-nodes-nerve-agent",
-  "version": "0.1.0",
+  "name": "@singularity_intelligence/nerve-agent-n8n",
+  "version": "0.1.1",
   "description": "A comprehensive n8n community node for integrating with Nerve Agent, a sophisticated multi-agent AI system. Provides chat interface, code execution, memory management, file processing, browser automation, and tool execution capabilities.",
   "keywords": [
     "n8n-community-node-package",
