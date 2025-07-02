@@ -48,12 +48,12 @@ This node provides comprehensive integration with Nerve Agent's capabilities:
 
 1. Install from npm:
 ```bash
-npm install @singularity_intelligence/nerve-agent-n8n
+npm install nerve-agent-n8n-node
 ```
 
 2. Or install from the n8n Community Nodes interface:
    - Go to **Settings** > **Community Nodes**
-   - Enter `@singularity_intelligence/nerve-agent-n8n`
+   - Enter `nerve-agent-n8n-node`
    - Click **Install**
 
 3. Restart n8n to load the new node
